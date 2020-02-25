@@ -13,8 +13,8 @@
   
 ### run  
 1.run broker with  
-*** $ broker [host_ip_address]  
+***** $ broker [host_ip_address]  
 2.run subscriber  
-*** $ subscribe [host_ip_address] [topic_name]  
+***** $ subscribe [host_ip_address] [topic_name]  
 3.run publisher  
-*** $ publisher [host_ip_address] [topic_name] [message]  
+***** $ publisher [host_ip_address] [topic_name] [message]  
