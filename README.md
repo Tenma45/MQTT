@@ -1,7 +1,7 @@
 # mqtt
 
-# cd into directory contains .bat files
+## cd into directory contains .bat files
 
 $setx PATH "%PATH%;%CD%"
 
-# add path for using .bat files
+### add path for using .bat files
