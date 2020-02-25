@@ -1,8 +1,6 @@
 import sys
-
-h = sys.argv[1]
-a = sys.argv[2]
-send = h+a
-print(send)
-parser = send[0:4]
-print(parser)
+if sys.argv[0]=='test':
+    success = 'success'
+else :
+    success = 'fail'
+print("testing path> %s",%(success))
