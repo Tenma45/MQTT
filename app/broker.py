@@ -23,7 +23,7 @@ def handle_client(s,port):
         topicLength = int(pack[1:3])
         dataLength = int(pack[3:5])
         topic = pack[5:5+topicLength]
-        data = pack[5+topicLength:5+topicLengthdataLength]
+        data = pack[5+topicLength:5+topicLength+dataLength]
         publishData = data
         publishTopic = topic
         print('published on topic> %s,' %(topic),'message> %s' %(data))
