@@ -1,10 +1,6 @@
 # MQTT  
   
-### add path for using .bat files  
-  cd into directory contains .bat files  
-  $ setx PATH "%PATH%;%CD%"  
-  
-### set alias path as your directory  
+### set .bat files for using Alias
 1.open file broker.txt  
 2.change path in line 3 into your directory path contain broker.py file  
 3.change command 'py' in line 3 up to your python version
@@ -13,8 +9,8 @@
   
 ### run  
 1.run broker with  
-***** $ broker [host_ip_address]  
+  - $ broker [host_ip_address]  
 2.run subscriber  
-***** $ subscribe [host_ip_address] [topic_name]  
+  - $ subscribe [host_ip_address] [topic_name]  
 3.run publisher  
-***** $ publisher [host_ip_address] [topic_name] [message]  
+  - $ publisher [host_ip_address] [topic_name] [message]  

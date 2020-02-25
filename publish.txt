@@ -1,3 +1,3 @@
 @echo off
 echo.
-py D:\vscode\network\MQTT\publish.py %*
+py D:\mqtt\app\publish.py %*
