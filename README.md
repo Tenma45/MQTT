@@ -11,9 +11,9 @@ place this repo to D:\mqtt
 4.repeat step 1-3 with subscribe.txt and publish.txt (optional test.txt)
   
 ### run  
-1.run broker with  
-  - $ broker [host_ip_address]  
-2.run subscriber  
-  - $ subscribe [host_ip_address] ["topic_name"]  
-3.run publisher  
-  - $ publisher [host_ip_address] ["topic_name"] ["message"]  
+- run broker with  
+$ broker [host_ip_address]  
+- run subscriber  
+$ subscribe [host_ip_address] ["topic_name"]  
+- run publisher  
+$ publisher [host_ip_address] ["topic_name"] ["message"]  
