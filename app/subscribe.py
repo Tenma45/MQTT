@@ -16,3 +16,4 @@ s.send(pack.encode('utf-8'))
 while True:
     message = s.recv(2048)
     print ('message> %s' %(message.decode('utf-8')))
+print('exit')
