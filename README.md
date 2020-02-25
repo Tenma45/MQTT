@@ -12,6 +12,7 @@ and python command is 'py'
 5.repeat step 1-3 with subscribe.txt and publish.txt (optional test.txt)
   
 ### run  
+path to where contains .bat files
 - run broker  
 $ broker [host_ip_address]  
 - run subscriber  
