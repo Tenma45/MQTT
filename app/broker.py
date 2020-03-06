@@ -10,45 +10,46 @@ s = socket(AF_INET, SOCK_STREAM)
 s.bind(addr)
 s.listen(1)
 
-subDict = {}
+subscribeList = {}
 
-def handle_client(s,addr):
+def handle_subscribe(sckt,ip,port,topic):
 
-    global subDict
+    global subscribeList
+
+    print('ip> %s:%s,' %(ip,port),'subscribe on topic> %s' %(topic))
+    if topic in subscribeList.keys():
+        subscribeList[topic].append(sckt)
+    else:
+        subscribeList[topic]=[sckt]
+    while True:
+        try:
+            sckt.recv(1024)
+        except:
+            subscribeList[topic].remove(sckt)
+            print('ip> %s:%s,' %(ip,port),'unsubscribe on topic> %s' %(topic))
+            sckt.close()
+            return
+    
+while True:
+
+    sckt, addr = s.accept()
     ip, port = str(addr[0]), str(addr[1])
-    pack = s.recv(1024)
+    pack = sckt.recv(1024)
     data = pickle.loads(pack)
     role = data['role']
     topic = data['topic']
     message = data['message']
 
-    if role=='publish':
+    if role == 'publish':
         print('ip> %s:%s,' %(ip,port),'published on topic> %s,' %(topic),'message> %s' %(message))
-        for node in subDict[topic]:
+        for node in subscribeList[topic]:
             node.send(message.encode('utf-8'))
+        sckt.close()
 
-    elif role=='subscribe':
-        print('ip> %s:%s,' %(ip,port),'subscribe on topic> %s' %(topic))
-        if topic in subDict.keys():
-            subDict[topic].append(s)
-        else:
-            subDict[topic]=[s]
-        while True:
-            try:
-                s.recv(1024)
-            except:
-                subDict[topic].remove(s)
-                print(print('ip> %s:%s,' %(ip,port),'abandon on topic> %s' %(topic)))
-                break
-
-    s.close()
-    return
-
-while True:
-    sckt, addr = s.accept()
-    try:
-        Thread(target=handle_client, args=(sckt,addr)).start()
-    except:
-        print("Cannot start thread..")
-        import traceback
-        trackback.print_exc() 
+    elif role == 'subscribe':
+        try:
+            Thread(target=handle_subscribe, args=(sckt,ip,port,topic)).start()
+        except:
+            print("Cannot start thread..")
+            import traceback
+            trackback.print_exc() 
