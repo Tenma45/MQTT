@@ -15,7 +15,7 @@ and python command is 'py'
 command line with path to where contains .bat files
 - run broker  
 $ broker [host_ip_address]  
-- run subscriber  
+- run subscribe  
 $ subscribe [host_ip_address] ["topic_name"]  
 - run publish  
-$ publishe [host_ip_address] ["topic_name"] ["message"]  
+$ publish [host_ip_address] ["topic_name"] ["message"]  
