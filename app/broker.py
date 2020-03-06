@@ -16,15 +16,16 @@ def handle_client(s,addr):
 
     global subDict
     ip, port = str(addr[0]), str(addr[1])
-    pack = pickle.loads(s.recv(1204))
-    role = pack['role']
-    topic = pack['topic']
-    data = pack['data']
+    pack = s.recv(1024)
+    data = pickle.loads(pack)
+    role = data['role']
+    topic = data['topic']
+    message = data['message']
 
     if role=='publish':
-        print('ip> %s:%s,' %(ip,port),'published on topic> %s,' %(topic),'message> %s' %(data))
+        print('ip> %s:%s,' %(ip,port),'published on topic> %s,' %(topic),'message> %s' %(message))
         for node in subDict[topic]:
-            node.send(data.encode('utf-8'))
+            node.send(message.encode('utf-8'))
 
     elif role=='subscribe':
         print('ip> %s:%s,' %(ip,port),'subscribe on topic> %s' %(topic))
@@ -50,4 +51,4 @@ while True:
     except:
         print("Cannot start thread..")
         import traceback
-        trackback.print_exc()
+        trackback.print_exc() 
