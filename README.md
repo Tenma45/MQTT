@@ -17,5 +17,5 @@ path to where contains .bat files
 $ broker [host_ip_address]  
 - run subscriber  
 $ subscribe [host_ip_address] ["topic_name"]  
-- run publisher  
-$ publisher [host_ip_address] ["topic_name"] ["message"]  
+- run publishe  
+$ publishe [host_ip_address] ["topic_name"] ["message"]  
