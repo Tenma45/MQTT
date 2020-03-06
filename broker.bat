@@ -1,3 +1,2 @@
 @echo off
-echo.
-py D:\mqtt\app\broker.py %*
+py D:\MQTT\Python\broker.py %*

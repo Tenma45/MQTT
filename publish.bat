@@ -1,3 +1,2 @@
 @echo off
-echo.
-py D:\mqtt\app\publish.py %*
+py D:\MQTT\Python\publish.py %*

@@ -1,3 +1,2 @@
 @echo off
-echo.
-py D:\mqtt\app\subscribe.py %*
+py D:\MQTT\Python\subscribe.py %*

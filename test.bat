@@ -1,3 +1,3 @@
 @echo off
 echo.
-py D:\mqtt\app\test.py %*
+py D:\MQTT\Python\test.py %*
