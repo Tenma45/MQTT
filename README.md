@@ -1,18 +1,18 @@
 # MQTT  
 
 ### Defualt
-must place this repo to D:\mqtt  
+must place this repo to D:\MQTT  
 and python command is 'py'
 
 ### IF NOT Defualt, update .bat files
-1.open file broker.txt  
-2.change path in line 3 into your directory path contain broker.py file  
-3.change command 'py' in line 3 into your python command  
-4.save as named "broker.bat" and replace  
-5.repeat step 1-3 with subscribe.txt and publish.txt (optional test.txt)
+1.right click on broker.bat file, then click edit.
+2.change path in line 2 into your directory path contain broker.py file.  (ex. C:\MQTT-Project\broker.py)
+3.change command 'py' in line 2 into your python command. (ex. python python3 )
+4.save then close.
+5.repeat step 1-4 with subscribe.txt and publish.txt.
   
 ### run  
-path to where contains .bat files
+command line with path to where contains .bat files
 - run broker  
 $ broker [host_ip_address]  
 - run subscriber  
