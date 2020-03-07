@@ -1,2 +1,9 @@
 @echo off
-py subscribe.py %*
+
+:loop
+
+set /p ip="CMD> "
+
+py subscribe.py %ip%
+
+goto loop

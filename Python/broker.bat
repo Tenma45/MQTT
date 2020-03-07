@@ -1,2 +1,9 @@
 @echo off
-py broker.py %*
+
+:loop
+
+set /p ip="CMD> "
+
+py broker.py %ip%
+
+goto loop
